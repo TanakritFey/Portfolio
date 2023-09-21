@@ -35,7 +35,7 @@ const handleNav = () => {
                        <span className="pl-4">Work</span>
                     </a>
 
-                    <a href="#project" 
+                    <a href="https://github.com/TanakritFey?tab=repositories" 
                     className="w-[75%] flex justify-center item-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
                        <AiFillGithub size={20} />
                        <span className="pl-4">Project</span>
@@ -72,7 +72,7 @@ const handleNav = () => {
                         <BsPersonWorkspace siza={20}/>
                     </a>
 
-                    <a href="#project" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
+                    <a href="https://github.com/TanakritFey?tab=repositories" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
                         <AiFillGithub siza={20}/>
                     </a>
 
