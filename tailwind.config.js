@@ -4,7 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  
   theme: {
+    fontFamily: {
+      Bangers: ["Bangers", "cursive"],
+      Nanum:["Original Surfer", "cursive"]
+    },
     extend: {},
   },
   plugins: [],

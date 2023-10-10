@@ -3,7 +3,8 @@ import Main from "./components/Main"
 import Work from "./components/Work"
 import Project from "./components/Project"
 import Contact from "./components/Contact"
-import Resume from "./components/Resume"
+import Skills from "./components/Skill"
+import About from "./components/About"
 
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
     <>
     <Sidenav/>
     <Main />
+    <About/>
+    <Skills />
     <Work />
     <Project/>
-    <Resume/>
     <Contact/>
     </>
   )

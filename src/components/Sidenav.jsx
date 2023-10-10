@@ -1,93 +1,164 @@
-import {AiOutlineMenu,AiOutlineHome,AiFillGithub,AiOutlineSolution} from "react-icons/ai";
-import {useState} from 'react'
-import {BsPersonWorkspace} from 'react-icons/bs'
-import {CiMail} from 'react-icons/ci'
+import React, { useState } from "react";
+// icon image
+import LogoNavbar from "./image/Logo.png";
+import Menuicon from "./image/Menuicon.png";
+import Exiticon from "./image/Exiticon.png";
+import LinkedinIcon from "./image/linkedin.svg";
+import GithubIcon from "./image/github.svg";
+import EmailIcon from "./image/email.png";
+import ResumeIcon from "./image/resume.png";
 
-// ขั้นตอน 1 : สร้าง Nav Memu
-const Sidenav = () => {
+const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const handleClick = () => setNav(!nav);
 
-const [nav,setNav] = useState(false)
+  return (
+    <div className="fixed w-full h-[70px] flex justify-between items-center px-4 bg-navcolor z-10   opacity-80">
+      <div className="object-cover md:w-[10%] md:block hidden">
+        <img
+          src={LogoNavbar}
+          alt="Logo"
+          style={{ width: "40%" }}
+        />
+      </div>
 
-// function handleNav ไปใช้กับ onClick เพื่อให้เปลี่ยนสถานะ
-const handleNav = () => {
-    setNav(!nav) // ต้องตั้งให้ nav ตรงข้ามกับค่าปัจจุบัน จาก false -> true
-    console.log('State Change');    // เช็ค state เมื่อกด ปุ่ม ว่ามีการทำงานและเปลี่ยน สถานะ หรือไม่?
-}
+      {/* menu */}
+      <div className="hidden md:flex mr-2 shadow shadow-slate-950">
+        <ul className="hidden md:flex">
+          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat ">
+            <a href="#main" className="font-Bangers text-3xl mr-2  max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
+              Home
+            </a>
+          </li>
+          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+            <a href="#about" className="font-Bangers text-3xl mr-2 mx-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
+              About
+            </a>
+          </li>
+          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+            <a href="#skill" className="font-Bangers text-3xl mr-2 mx-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff] ">
+              Skills
+            </a>
+          </li>
+          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+            <a href="#work" className="font-Bangers text-3xl mr-2 mx-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
+              Work
+            </a>
+          </li>
+          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+            <a href="#projects" className="font-Bangers text-3xl mr-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
+              Project
+            </a>
+          </li>
+          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+            <a href="#contact" className="font-Bangers text-3xl mr-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
+              Contact
+            </a>
+          </li>
 
-    return (
-        <div>
-          <AiOutlineMenu onClick={handleNav} className="absolute top-4 right-4 z-[99] md:hidden"/>
-            {
-                /* if มากำหนด สถานะของ nav หากเป็นจริงจะให้แสดงแทบ menu ด้านขวา ออกมา */
-              nav ? (
-                /*  เงื่อนไขจริง : ถ้าหน้าจอเล็กกว่า 1024px จะให้แสดง menu ด้านขวาแทน , h-screen คือ ให้ไปอยู่หน้ากลาง Website */
-                <div className="fixed w-full h-screen bg-white/90 flex flex-col justify-center items-center z-20">   {/* กำหนด style ให้กับ Navmenu ด้านขวา เมื่อกดคลิกเข้ามาจะให้ แสดงอยู่ตรงกลาง ของ Web */}
-                    
-                    <a href="#main" 
-                    className="w-[75%] flex justify-center item-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
-                       <AiOutlineHome size={20} />
-                       <span className="pl-4">Home</span>
-                    </a>
+        </ul>
+      </div>
 
-                    <a href="#work" 
-                    className="w-[75%] flex justify-center item-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
-                       <BsPersonWorkspace size={20} />
-                       <span className="pl-4">Work</span>
-                    </a>
+      {/* menu mobile icon */}
+      <div onClick={handleClick} className="md:hidden w-[35px] z-10">
+        {!nav ? (
+          <img className="w-[100%]" src={Menuicon} alt="icon menu" />
+        ) : (
+          <img className="w-[100%]" src={Exiticon} alt="exit menu" />
+        )}
+      </div>
 
-                    <a href="https://github.com/TanakritFey?tab=repositories" 
-                    className="w-[75%] flex justify-center item-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
-                       <AiFillGithub size={20} />
-                       <span className="pl-4">Project</span>
-                    </a>
+      {/* Mobile menu */}
+      <ul
+        className={
+          !nav
+            ? "hidden"
+            : "absolute top-0 left-0 w-full h-screen bg-[#419197] flex flex-col justify-center items-center"
+        }
+      >
+        <li className="py-6 font-Bangers text-[#FFFFFF] text-[2.5rem]">Home</li>
+        <li className="py-6 font-Bangers text-[#FFFFFF] text-[2.5rem]">About</li>
+        <li className="py-6 font-Bangers text-[#FFFFFF] text-[2.5rem]">
+          Skills
+        </li>
+        <li className="py-6 font-Bangers text-[#FFFFFF] text-[2.5rem]">
+          Project
+        </li>
+        <li className="py-6 font-Bangers text-[#FFFFFF] text-[2.5rem]">
+          Contact
+        </li>
+      </ul>
 
-                    <a href="#resume" 
-                    className="w-[75%] flex justify-center item-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
-                       <AiOutlineSolution size={20} />
-                       <span className="pl-4">Resume</span>
-                    </a>
+      {/* Social icons */}
+      <div className="hidden md:block min-[1120px]:flex fixed flex-col top-[35%] left-0">
+        <ul>
+          <li className="w-[165px] h-[70px] flex justify-between items-center ml-[-88px] hover:ml-[0px] duration-[200ms] rounded-t-lg hover:rounded-br-lg bg-[#BBD6FF]">
+            <a
+              className="flex justify-between items-center w-full font-Nanum"
+              href="https://www.linkedin.com/in/tanakrit-sonsue-7b3842220/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Linkedin
+              <img
+                className="w-[55px] mr-[-3px]"
+                src={LinkedinIcon}
+                alt="Linked logo"
+              />
+            </a>
+          </li>
 
-                    <a href="#contact" 
-                    className="w-[75%] flex justify-center item-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200">
-                       <CiMail size={20} />
-                       <span className="pl-4">Contact</span>
-                    </a>
+          <li className="w-[165px] h-[70px] flex justify-between items-center ml-[-88px] hover:ml-[0px] duration-[200ms]  hover:rounded-r-lg bg-[#D6E5E5]">
+            <a
+              className="flex justify-between items-center w-full font-Nanum"
+              href="https://github.com/TanakritFey"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+              <img
+                className="w-[55px] mr-[-3px]"
+                src={GithubIcon}
+                alt="Github logo"
+              />
+            </a>
+          </li>
 
-                </div>
-            )
-            :(
-                   // เงื่อนไข else เป็นเท็จ : ให้แสดง ค่าว่าง
-             ''
-            )
-            }
-            {/* ถ้าขนาดมากกว่า ขนาดหน้าจอ middle 768px ขึ้นไป จะให้แสดงแทบเมนูด้าน ขวา แทน ถ้าต่ำกว่า768px จะซ่อนเมนูด้านซ้าย ให้ไปแสดงเมนูแบบ mobile แทน*/}
-            <div className="md:block hidden fixed top-[25%] z-10">
-                <div className="flex flex-col">
+          <li className="w-[165px] h-[70px] flex justify-between items-center ml-[-88px] hover:ml-[0px] duration-[200ms]  hover:rounded-r-lg bg-[#FF9393]">
+            <a
+              className="flex justify-between items-center w-full font-Nanum"
+              href="mailto:tanakrit.sonsue@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email
+              <img
+                className="w-[55px] mr-[-3px]"
+                src={EmailIcon}
+                alt="Email logo"
+              />
+            </a>
+          </li>
 
-                    <a href="#main" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
-                        <AiOutlineHome siza={20}/>
-                    </a>
+          <li className="w-[165px] h-[70px] flex justify-between items-center ml-[-88px] hover:ml-[0px] duration-[200ms] rounded-b-lg hover:rounded-r-lg bg-[#C4E3B5]">
+            <a
+              className="flex justify-between items-center w-full font-Nanum"
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+              <img
+                className="w-[55px] mr-[-3px]"
+                src={ResumeIcon}
+                alt="Resume logo"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-                    <a href="#work" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
-                        <BsPersonWorkspace siza={20}/>
-                    </a>
-
-                    <a href="https://github.com/TanakritFey?tab=repositories" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
-                        <AiFillGithub siza={20}/>
-                    </a>
-
-                    <a href="#resume" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
-                        <AiOutlineSolution siza={20}/>
-                    </a>
-
-                    <a href="#contact" className="rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200 ">
-                        <CiMail size={20}/>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
-    )
-}
-export default Sidenav
+export default Navbar;

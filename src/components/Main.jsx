@@ -6,47 +6,59 @@ import fey from '../Img/fey.svg'
 const Main = () => {
 
     return (
-        <div id='main'>
-            <img className="w-full h-screen object-cover object-left scale-x-[-1]" 
-            src="https://cdn.pixabay.com/photo/2020/06/30/13/13/man-5356316_1280.jpg" alt="/" />
+        <div id='main' >
+            <img className="w-full h-screen object-cover object-left scale-x-[-1] opacity-70 " 
+            src="https://media3.giphy.com/media/iF1s8RGQvUEFBXeBJm/200w.webp?cid=ecf05e47qkujdu4kd1yghcljosfcugbudrkygatg906qml8l&ep=v1_gifs_search&rid=200w.webp&ct=g" alt="/" />
             {/* Overlay */}
-            <div className="w-full h-screen absolute top-0 bg-white/30">
+            <div className="w-full h-screen absolute top-0 bg-black/95 " >
                 {/* text ที่ทับรูปภาพ */}
-                <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center lg:items-start items-center'>
+                <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center lg:items-start'>
                   
-                    <h1 className='sm:text-5xl text-4xl font-bold text-gray-800 mt-10 mx-auto'>I'm Tanakrit Sonsue</h1>
+                    <h1 className='sm:text-7xl text-4xl font-bold text-[#FFCC70]  mt-10 mx-auto font-Nanum'>Hi my name is </h1>
                     
-                    <h2 className='flex sm:text-3xl text-2xl pt-4 text-gray-800 mx-auto'>
-                        I'm a
+                    <h2 className='flex sm:text-4xl text-3xl pt-4 my-4 text-white mx-auto font-Nanum  '>
+                        
                     {/* Import Animation มาใช้กับ ชื่อของเรา */}
                     <TypeAnimation
                         sequence={[
                             // Same substring at the start will only be typed out once, initially
-                            'Junior Software Developer',
-                            2000, // wait 1s 
-                            'Coder',
-                            2000, // wait 2s
-                            'Tech Enthusiast',
-                            2000, // wait 2s
-                
+                            'Tanakrit Sonsue',
+                            4000, // wait 1s 
                         ]}
                         wrapper="div"
                         cursor={true}
-                        style={{ fontSize: '1em', paddingLeft:'5px' }}
+                        style={{ fontSize: '1.5em', paddingLeft:'15px' }}
                         repeat={Infinity}
                         />
                     </h2>
                      {/* img profiles */}
-                     <img className='w-[25rem] rounded-full my-6 shadow-2xl shadow-slate-950 mx-auto' src={fey} alt="profile-img" />
+                     <img className='w-[25rem] rounded-full my-6 shadow-2xl shadow-slate-700 mx-auto' src={fey} alt="profile-img" />
                    
-                    <p className='text-center text-lg text-white w-full h-screen'>I am a graduate of Generation Thailand Junior Software Developer Bootcamp, and I have experience in Digital Marketing for 4 years. I got better at planning, working in teams, and leading teams. I want to be a Junior FullStack Software Developer. I am excited to use my special skills to make new and smart ideas that connect technology and how people use it.</p>
-
-                    <div className='flex justify-between text-center  pt-6 max-w-[200px] w-full h-full'>
-                        <FaTwitter className='cursor-pointer' size={20}/>
-                        <FaFacebook className='cursor-pointer' size={20}/>
-                        <FaInstagram className='cursor-pointer' size={20}/>
-                        <FaLinkedin className='cursor-pointer' size={20}/>
-                    </div>
+{/*                     <p className='text-center text-lg text-white w-full h-screen'>I am a graduate of Generation Thailand Junior Software Developer Bootcamp, and I have experience in Digital Marketing for 4 years. I got better at planning, working in teams, and leading teams. I want to be a Junior FullStack Software Developer. I am excited to use my special skills to make new and smart ideas that connect technology and how people use it.</p>
+ */}
+                    <h2 className='flex sm:text-4xl text-2xl pt-4  text-white mx-auto font-Nanum  '>
+                        I'm a
+                        {/* Import Animation มาใช้กับ ชื่อของเรา */}
+                        <TypeAnimation
+                            sequence={[
+                                // Same substring at the start will only be typed out once, initially
+                                'Junior Software Developer',
+                                2000, // wait 1s 
+                                'Tech Enthusiast',
+                                2000, // wait 2s
+                            ]}
+                            wrapper="div"
+                            cursor={true}
+                            style={{ fontSize: '1em', paddingLeft:'15px' }}
+                            repeat={Infinity}
+                            />
+                        </h2>
+                    {/* <div className='flex justify-between text-center  pt-6 max-w-[200px] w-full h-full mx-auto text-white'>
+                        <FaTwitter className='cursor-pointer' size={30}/>
+                        <FaFacebook className='cursor-pointer' size={30}/>
+                        <FaInstagram className='cursor-pointer' size={30}/>
+                        <FaLinkedin className='cursor-pointer' size={30}/>
+                    </div> */}
                     
                 </div>
             </div>
