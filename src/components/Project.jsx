@@ -1,6 +1,6 @@
 import { AiFillGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi";
-import colmar from "../Img/Colmar.png";
+import colmar from "../Img/colmar.png";
 import countdown from "../Img/countdown.png";
 import findhat from '../Img/Finyourhat.png'
 import poke from '../Img/Pokemon.png'
