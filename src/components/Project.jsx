@@ -1,9 +1,6 @@
-import React from "react";
-// import react-icon
 import { AiFillGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi";
 import colmar from "../Img/Colmar.png";
-import burger from "../Img/burger.jpg";
 import countdown from "../Img/countdown.png";
 import findhat from '../Img/Finyourhat.png'
 import poke from '../Img/Pokemon.png'
