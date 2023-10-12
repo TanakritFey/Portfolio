@@ -1,6 +1,5 @@
 import { TypeAnimation } from 'react-type-animation';
-import { FaInstagram, FaLinkedin, FaTwitter,FaFacebook } from 'react-icons/fa'
-import fey from '../Img/fey.svg'
+import fey from '../Img/fey.jpg'
 
 // ขั้นตอนที่ 2 : สร้าง hero ที่แสดงภาพด้านบนสุดของ Web
 const Main = () => {
@@ -8,9 +7,9 @@ const Main = () => {
     return (
         <div id='main' >
             <img className="w-full h-screen object-cover object-left scale-x-[-1] opacity-70 " 
-            src="https://media3.giphy.com/media/iF1s8RGQvUEFBXeBJm/200w.webp?cid=ecf05e47qkujdu4kd1yghcljosfcugbudrkygatg906qml8l&ep=v1_gifs_search&rid=200w.webp&ct=g" alt="/" />
+            src="https://media4.giphy.com/media/BHNfhgU63qrks/giphy.gif?cid=ecf05e47j82m72of69tjcpwd83w0j3a4mrwl9h3128xhqxek&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="/" />
             {/* Overlay */}
-            <div className="w-full h-screen absolute top-0 bg-black/95 " >
+            <div className="w-full h-screen absolute top-0 bg-black/90 " >
                 {/* text ที่ทับรูปภาพ */}
                 <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center lg:items-start'>
                   

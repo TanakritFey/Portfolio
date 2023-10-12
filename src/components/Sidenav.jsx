@@ -13,44 +13,44 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed w-full h-[70px] flex justify-between items-center px-4 bg-navcolor z-10   opacity-80">
-      <div className="object-cover md:w-[10%] md:block hidden">
+    <div className="fixed w-full h-[70px] flex justify-center items-center text-center px-4 bg-navcolor z-10   opacity-80">
+     {/*  <div className="object-cover md:w-[10%] md:block hidden">
         <img
           src={LogoNavbar}
           alt="Logo"
           style={{ width: "40%" }}
         />
-      </div>
+      </div> */}
 
       {/* menu */}
-      <div className="hidden md:flex mr-2 shadow shadow-slate-950">
-        <ul className="hidden md:flex">
-          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat ">
+      <div className="hidden md:flex shadow shadow-slate-950 items-center text-center">
+        <ul className="hidden md:flex  ">
+          <li className=" max-w-xs overflow-hidden bg-cover bg-no-repeat ">
             <a href="#main" className="font-Bangers text-3xl mr-2  max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
               Home
             </a>
           </li>
-          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+          <li className=" max-w-xs overflow-hidden bg-cover bg-no-repeat">
             <a href="#about" className="font-Bangers text-3xl mr-2 mx-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
               About
             </a>
           </li>
-          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+          <li className=" max-w-xs overflow-hidden bg-cover bg-no-repeat">
             <a href="#skill" className="font-Bangers text-3xl mr-2 mx-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff] ">
               Skills
             </a>
           </li>
-          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+          <li className=" max-w-xs overflow-hidden bg-cover bg-no-repeat">
             <a href="#work" className="font-Bangers text-3xl mr-2 mx-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
               Work
             </a>
           </li>
-          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+          <li className=" max-w-xs overflow-hidden bg-cover bg-no-repeat">
             <a href="#projects" className="font-Bangers text-3xl mr-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
               Project
             </a>
           </li>
-          <li className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+          <li className=" max-w-xs overflow-hidden bg-cover bg-no-repeat">
             <a href="#contact" className="font-Bangers text-3xl mr-2 max-w-xs transition duration-300 ease-in-out hover:scale-110 w-[75%] text-[#ffffff]">
               Contact
             </a>

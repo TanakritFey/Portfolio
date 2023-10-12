@@ -15,8 +15,9 @@ function App() {
     <Sidenav/>
     <Main />
     <About/>
-    <Skills />
     <Work />
+    <Skills />
+
     <Project/>
     <Contact/>
     </>

@@ -39,11 +39,12 @@ const data = [
 const Work = () => {
     
     return(
-        <div id='work' className='flex justify-center w-full m-auto md:pl-20 p-4 py-16 bg-[#6499E9] '>
+        <div id='work' className='flex justify-center w-full m-auto md:pl-20 p-4 py-16 bg-[#000000]' >
             <div className='max-w-[1040px] '>
-            <div className='pb-4 text-center'>
+            <div className='pb-4 text-center' data-aos="fade-left" data-aos-offset="500" data-aos-duration="500">
             <h1 className='font-Bangers text-6xl font-bold  text-white inline border-b-4'>Work Experience</h1>
             </div>
+            <div data-aos="fade-right" data-aos-offset="500" data-aos-duration="500">
             {data.map((item,index) => (
                 /* Props ข้อมูล Data ทั้งหมดจาก ไฟล์ Work.jsx ส่งไปยัง WorkItem.jsx โดยผ่านการ map() */
                 <WorkItem 
@@ -55,6 +56,7 @@ const Work = () => {
                 details={item.details} />
                     
             ) )}
+            </div>
             </div>
         </div>
     )

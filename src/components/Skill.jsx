@@ -15,7 +15,7 @@ import Figma from "./imageskill/Figma.png";
 
 const Skills = () => {
   return (
-    <div className="bg-[#6499E9] w-full h-full" id="skill">
+    <div className="bg-[#000000] w-full h-full" id="skill">
       {/* Container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-auto">
         {/* หัวข้อ Skills */}
@@ -29,7 +29,9 @@ const Skills = () => {
         </div>
 
         {/* Skill icon card */}
-        <div className="w-full grid grid-cols-2 sm:grid-cols-4 text-center py-8 gap-[1rem]">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-4 text-center py-8 gap-[1rem] " data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
           {/* Card skills */}
 
           <div className="shadow-md rounded-md shadow-[#040c16] bg-[#F5FCCD] hover:scale-110 duration-500">
